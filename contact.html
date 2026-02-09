@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./image/ayn-favicon.ico">
 </head>
+
 <body>
-    
+
     <!-- Section Header -->
     <header>
         <!-- Section Navbar -->
@@ -37,18 +39,19 @@
             <div class="banner-layout-wrapper">
                 <div class="banner-layout">
                     <div class="d-flex flex-column text-center align-items-center gspace-2">
-                        <h2 class="title-heading animate-box animated animate__animated" data-animate="animate__fadeInRight">Contact Us</h2>
+                        <h2 class="title-heading animate-box animated animate__animated"
+                            data-animate="animate__fadeInRight">Contact Us</h2>
                         <nav class="breadcrumb">
                             <a href="./index.html" class="gspace-2">Home</a>
                             <span class="separator-link">/</span>
                             <p class="current-page">Contact Us</p>
-                        </nav>    
+                        </nav>
                     </div>
                     <div class="spacer"></div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Section Contact -->
         <div class="section">
             <div class="hero-container">
@@ -61,8 +64,10 @@
                                     <span>Reach out to us</span>
                                 </div>
                                 <h2 class="title-heading">Get in Touch</h2>
-                                <p>Reach out to us for tailored digital solutions that drive results sollicitudin nec.</p>
-                                <div class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
+                                <p>Reach out to us for tailored digital solutions that drive results sollicitudin nec.
+                                </p>
+                                <div
+                                    class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
                                     <div>
                                         <div class="icon-wrapper">
                                             <div class="icon-box">
@@ -75,7 +80,8 @@
                                         <h5>+91 81244 93449</h5>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
+                                <div
+                                    class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
                                     <div>
                                         <div class="icon-wrapper">
                                             <div class="icon-box">
@@ -88,7 +94,8 @@
                                         <h5>ayntechpy1@gmail.com</h5>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
+                                <div
+                                    class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
                                     <div>
                                         <div class="icon-wrapper">
                                             <div class="icon-box">
@@ -109,7 +116,7 @@
                             <span class="check-icon"><i class="fa-solid fa-2xl fa-check"></i></span>
                             <p>Thank you! Form submitted successfully.</p>
                         </div>
-                        
+
                         <div id="error-message" class="alert error hidden">
                             <span class="cross-icon"><i class="fa-solid fa-2xl fa-xmark"></i></span>
                             <p>Oops! Form submission failed. Please try again.</p>
@@ -117,31 +124,39 @@
                         <div class="form-layout-wrapper">
                             <div class="card form-layout">
                                 <h3 class="title-heading">Let's Talk About Your Next Project</h3>
-                                <form action="./php/form_process.php" method="post" id="contactForm" class="form">
+                                <form id="contactForm" class="form">
                                     <div class="row row-cols-md-2 row-cols-1 g-3">
                                         <div class="col">
-                                            <input type="text" name="first-name" id="first-name" placeholder="First Name">
+                                            <input type="text" name="firstName" id="firstName" placeholder="First Name"
+                                                required>
                                         </div>
                                         <div class="col">
-                                            <input type="text" name="last-name" id="last-name" placeholder="Last Name">
+                                            <input type="text" name="lastName" id="lastName" placeholder="Last Name"
+                                                required>
                                         </div>
                                     </div>
+                                    
                                     <div class="row row-cols-md-2 row-cols-1 g-3">
                                         <div class="col">
-                                            <input type="email" name="email" id="email" placeholder="Email Address" required>
+                                            <input type="email" name="email" id="email" placeholder="Email Address"
+                                                required>
                                         </div>
                                         <div class="col">
-                                            <input type="text" name="subject" id="subject" placeholder="Subject">
+                                            <input type="number" name="phone" id="phone" placeholder="Phone Number"
+                                                required>
                                         </div>
                                     </div>
-                                    <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
+                                      <input type="text" name="subject" id="subject" placeholder="Subject"
+                                                required>
+                                    <textarea name="message" id="message" rows="5" placeholder="Message"
+                                        required></textarea>
                                     <div class="form-button-container">
                                         <button type="submit" class="btn btn-accent">
                                             <span class="btn-title">
                                                 <span>Send a Message</span>
                                             </span>
                                             <span class="icon-circle">
-                                              <i class="fa-solid fa-arrow-right"></i>
+                                                <i class="fa-solid fa-arrow-right"></i>
                                             </span>
                                         </button>
                                     </div>
@@ -177,4 +192,5 @@
     <script src="js/submit-form.js"></script>
     <script src="js/video_embedded.js"></script>
 </body>
+
 </html>

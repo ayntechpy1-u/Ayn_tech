@@ -1,9 +1,9 @@
 $(function(){
    var swiperPartner = new Swiper('.swiper.swiperPartner',{
         autoplay: {
-            delay: 5000,
+            delay: 1000,
         },
-        speed: 1000,
+        speed: 2000,
         slidesPerView: 6,
         spaceBetween: 20,
         loop: true,
