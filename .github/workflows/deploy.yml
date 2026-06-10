@@ -1,0 +1,54 @@
+name: Deploy Website via FTP to MilesWeb
+
+on:
+  push:
+    branches:
+      - main  # Triggers on push to main branch
+
+concurrency:
+  group: deployment
+  cancel-in-progress: true
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy Website to MilesWeb Hosting
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 📂 Sync files via FTP to MilesWeb
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        # MilesWeb FTP deployment directory (update if different from public_html)
+        server-dir: ./public_html/
+        # Exclude files and directories from upload
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          .github/**
+          *.md
+          Dockerfile
+          docker-compose.yml
+          appscript.js
+          refermce-appscript.js
+          .gitignore
+          .env
+          .env.local
+        # Set to true to delete files on server that don't exist locally
+        state-name: .ftp-deploy-sync-state.json
+        
+    - name: ✅ Deployment Status
+      if: success()
+      run: echo "✅ Website deployed successfully to MilesWeb!"
+      
+    - name: ❌ Deployment Failed
+      if: failure()
+      run: echo "❌ Deployment failed. Check FTP credentials and server availability."

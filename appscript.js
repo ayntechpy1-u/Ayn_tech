@@ -37,7 +37,8 @@ function doPost(e) {
       !data.firstName ||
       !data.lastName ||
       !data.email ||
-      !data.subject ||
+      !data.serviceNeeded ||
+      !data.budgetRange ||
       !data.message
     ) {
       throw new Error("Missing required fields");
@@ -77,7 +78,8 @@ function appendToSheet(data, timestamp) {
     data.lastName,
     data.phone,
     data.email,
-    data.subject,
+    data.serviceNeeded,
+    data.budgetRange,
     data.message,
   ]);
 }
@@ -86,7 +88,7 @@ function appendToSheet(data, timestamp) {
  * SEND EMAIL TO ADMIN
  *********************************/
 function sendAdminEmail(data, timestamp) {
-  const subject = `📩 New Enquiry Received – ${data.subject}`;
+  const subject = `📩 New Enquiry Received – ${data.serviceNeeded}`;
 
   const body = `
 New enquiry received from website
@@ -94,7 +96,8 @@ New enquiry received from website
 Name: ${data.firstName} ${data.lastName}
 Phone: ${data.phone} 
 Email: ${data.email}
-Subject: ${data.subject}
+Service Needed: ${data.serviceNeeded}
+Budget Range: ${data.budgetRange}
 
 Message:
 ${data.message}

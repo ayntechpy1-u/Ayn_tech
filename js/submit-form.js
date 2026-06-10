@@ -8,7 +8,8 @@ function initSubmitContact() {
       lastName: $("#lastName").val(),
       phone: $("#phone").val(),
       email: $("#email").val(),
-      subject: $("#subject").val(),
+      serviceNeeded: $("#serviceNeeded").val(),
+      budgetRange: $("#budgetRange").val(),
       message: $("#message").val(),
     };
     // Basic validation
@@ -16,7 +17,8 @@ function initSubmitContact() {
       !formData.firstName ||
       !formData.lastName ||
       !formData.email ||
-      !formData.subject ||
+      !formData.serviceNeeded ||
+      !formData.budgetRange ||
       !formData.message
     ) {
       $errorMessage.removeClass("hidden");
@@ -28,7 +30,7 @@ function initSubmitContact() {
     }
     // Send to Google Apps Script
     $.ajax({
-      url: "https://script.google.com/macros/s/AKfycbxCkFacKpWvvHSjyGjElxmi6xe4olC8wBG3jX-GfQHgsUwzf2rre3bEH_KZTaeY0MSZ/exec",
+      url: "https://script.google.com/macros/s/AKfycbx8xW_70y4MQsvqaL7e2cgzrZ2FmOkU8SrERrd23CWnxQdiCoTmZ7jDaAGuRgc4a8p8/exec",
       type: "POST",
       dataType: "json",
       data: formData, // Send as form data instead of JSON to avoid CORS preflight
